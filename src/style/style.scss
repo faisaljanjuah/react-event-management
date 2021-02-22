@@ -1,0 +1,186 @@
+@import 'variables';
+@import 'mixins';
+@import 'normalize';
+
+//	sass --watch style.scss:../style.css --style compressed --sourcemap=none
+
+#root {
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 1200px;
+    border: 1px solid $lightGray;
+}
+.btn-wide {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.modal {
+    & .modal-dialog {
+        width: auto;
+        max-width: 1200px;
+    }
+    & .modal-content {
+        & > .close {
+            right: 0;
+            z-index: 1;
+            width: 26px;
+            margin: 14px;
+            font-size: 26px;
+            line-height: 26px;
+            position: absolute;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+.calendarHeader {
+    text-align: center;
+    margin-bottom: 10px;
+    & .currentMonthYear {
+        display: inline-block;
+        & button {
+            margin-right: 6px;
+        }
+    }
+    & .prevMonth {
+        float: left;
+    }
+    & .nextMonth {
+        float: right;
+    }
+    & button {
+        border: none;
+        outline: none;
+        padding: 9px 12px;
+        background: #eee;
+        border-radius: 4px;
+        -webkit-transition: all ease-in-out .2s;
+        -moz-transition: all ease-in-out .2s;
+        -ms-transition: all ease-in-out .2s;
+        -o-transition: all ease-in-out .2s;
+        transition: all ease-in-out .2s;
+        &:hover {
+            background: #ddd;
+        }
+    }
+    & .dateSelect {
+        border: none;
+        outline: none;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 8px 12px;
+        background: #eee;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &.selectMonth {
+            border-radius: 4px 0 0 4px;
+        }
+        &.selectYear {
+            border-radius: 0 4px 4px 0;
+            border-left: 1px solid #ddd;
+        }
+    }
+}
+.dayOfMonth {
+    & > span {
+        float: left;
+    }
+    & .eventActions {
+        float: right;
+        & > span {
+            opacity: 0.6;
+            cursor: pointer;
+            color: #2222ff;
+            margin-right: 4px;
+            -webkit-transition: all ease-in-out 0.15s;
+            -moz-transition: all ease-in-out 0.15s;
+            -ms-transition: all ease-in-out 0.15s;
+            -o-transition: all ease-in-out 0.15s;
+            transition: all ease-in-out 0.15s;
+            &:last-child {
+                margin-right: 0;
+            }
+            &.icon {
+                width: 20px;
+                height: 16px;
+                overflow: hidden;
+                text-indent: -999px;
+                display: inline-block;
+                vertical-align: text-bottom;
+                background: no-repeat center;
+                background-size: contain;
+                &.add {
+                    background-image: url('style/icons/icon_add.png');
+                }
+                &.edit {
+                    background-image: url('style/icons/icon_edit.png');
+                }
+                &.delete {
+                    background-image: url('style/icons/icon_trash.png');
+                }
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+.calendarTable {
+    width: 100%;
+    table-layout: fixed;
+    & .changeMonth {
+        text-align: center;
+    }
+    & .currentMonthYear {
+        text-align: center;
+    }
+    & thead {
+        & tr {
+            & > * {
+                padding: 10px;
+                font-size: 17px;
+                font-weight: 400;
+                background: #F5F5F5;
+                border: 1px solid #E5E5E5;
+            }
+        }
+        
+    }
+    & tbody {
+        & tr {
+            & > * {
+                vertical-align: top;
+                border: 1px solid #E5E5E5;
+            }
+        }
+    }
+    & .date {
+        &.today{
+            background: #e1ffef;
+        }
+        &.blankDay {
+            opacity: 0.4;
+            background: #E5E5E5;
+            & .eventActions > span {
+                cursor: default;
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+        & .dayOfMonth {
+            padding: 2px 6px;
+            margin-bottom: 60px;
+            background: rgba(180,180,180,0.1);
+            &:after {
+                clear: both;
+                content: '';
+                display: table;
+            }
+        }
+    }
+}
+@import 'responsive';

@@ -1,0 +1,114 @@
+// default margins for XS resolution
+@for $mloop from 12 through 1 {
+    .mt-#{$mloop}0, .mt-xs-#{$mloop}0 {
+        margin-top: 10px * $mloop;
+    }
+    .mb-#{$mloop}0, .mb-xs-#{$mloop}0 {
+        margin-bottom: 10px * $mloop;
+    }
+}
+
+@include mediaScreen($minWidth,$xs){ /* min 560px */
+
+}
+@include mediaScreen($minWidth,$sm){ /* min 768px */
+    @for $mloop from 12 through 1 {
+        .mt-sm-#{$mloop}0 {
+            margin-top: 10px * $mloop;
+        }
+        .mb-sm-#{$mloop}0 {
+            margin-bottom: 10px * $mloop;
+        }
+    }
+    
+}
+@include mediaScreen($minWidth,$md){ /* min 992 */
+    @for $mloop from 12 through 1 {
+        .mt-md-#{$mloop}0 {
+            margin-top: 10px * $mloop;
+        }
+        .mb-md-#{$mloop}0 {
+            margin-bottom: 10px * $mloop;
+        }
+    }
+}
+@media only screen and (min-width: 1108px){
+    
+}
+@media only screen and (max-width: 1114px) and (min-width: 992px) {
+    
+}
+@media only screen and (max-width: 1107px){
+    
+}
+@media only screen and (max-width: 659px){
+    
+}
+@include mediaScreen($minWidth, $lg){ /* min 1200 */
+    @for $mloop from 12 through 1 {
+        .mt-lg-#{$mloop}0 {
+            margin-top: 10px * $mloop;
+        }
+        .mb-lg-#{$mloop}0 {
+            margin-bottom: 10px * $mloop;
+        }
+    }
+}
+@include mediaScreen($minWidth, 1400px){ /* min 1400 */
+    .container-fluid {
+        max-width: 1300px;
+    }
+}
+@include mediaScreen($minWidth, 1600px){ /* min 1600 */
+    .container-fluid {
+        max-width: 1500px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@include mediaScreen($maxWidth,$lg){ /* max 1199 */
+
+}
+@include mediaScreen($maxWidth,$md){ /* max 991 */
+    
+}
+@include mediaScreen($maxWidth,$sm){ /* max 767px */
+    
+}
+@include mediaScreen($maxWidth,$xs){ /* max 559px */
+    .calendarTable thead tr > * {
+        font-size: 14px;
+        padding: 10px 4px;
+        text-align: center;
+    }
+    .calendarHeader {
+        & button span {
+            display: none;
+        }
+        & .currentMonthYear button {
+            margin-right: 4px;
+        }
+    }
+}
+
+
+
+@include mediaScreen2($sm, $md){ /* min-width   to   max-width */
+
+}
+@media only screen and (max-height: 480px){
+    
+}
+@media only screen and (max-width: 340px){
+    
+}
+
